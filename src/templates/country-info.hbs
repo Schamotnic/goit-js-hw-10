@@ -8,11 +8,14 @@
     <h2 class="card-title">{{name.official}}</h2>
     
   
-   <ul>
-      <li class="country-properties">Capital: {{capital}}</li>
-      <li class="country-properties">Population: {{population}}</li>
-      <li class="country-properties">Languages: {{languages}}</li>
-   </ul>
+   <div class="card-body">
+        <p><b>Capital:</b> {{capital}} </p>
+        <p><b>Population:</b> {{population}} </p>
+        <p>Languages:{{Languages}}
+        {{#each languages}}{{#if @index}},{{/if}} {{this}}{{/each}}
+        {{#each languages}}{{#if @index}}{{this}}{{else}}{{this}},{{/if}}{{/each}}
+        </p>
+    </div>
 </div>
 {{/each}}
   
